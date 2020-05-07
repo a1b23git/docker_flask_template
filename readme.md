@@ -1,0 +1,1 @@
+docker exec -it flask_doker_flaskk_1 bash

@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+  flaskk:
+    build: .
+    command: gunicorn  -b 0.0.0.0:5000 hello:app --reload
+    #command: flask run --host=0.0.0.0
+    environment: 
+      - FLASK_APP=hello.py
+      - FLASK_DEBUG=1
+      - pythonunbuffered=True
+    ports:
+      - "5000:5000"  
+    volumes: 
+      - ./:/root  
